@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SmartLight.Services.LampService" CodeBehind="LampService.svc.cs" %>

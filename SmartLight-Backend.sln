@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SmartLight.Database", "SmartLight.Database\SmartLight.Database.sqlproj", "{FCB323AA-EFA5-479F-81F7-BC630CED1C85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartLight.Entities", "SmartLight.Entities\SmartLight.Entities.csproj", "{FF94430D-3837-4FED-AC36-D69F3F772429}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartLight.Services", "SmartLight.Services\SmartLight.Services.csproj", "{E6234B2A-A89F-4E25-B6FF-FF4DBE93ED41}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCB323AA-EFA5-479F-81F7-BC630CED1C85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCB323AA-EFA5-479F-81F7-BC630CED1C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCB323AA-EFA5-479F-81F7-BC630CED1C85}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FCB323AA-EFA5-479F-81F7-BC630CED1C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCB323AA-EFA5-479F-81F7-BC630CED1C85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCB323AA-EFA5-479F-81F7-BC630CED1C85}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{FF94430D-3837-4FED-AC36-D69F3F772429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF94430D-3837-4FED-AC36-D69F3F772429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF94430D-3837-4FED-AC36-D69F3F772429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF94430D-3837-4FED-AC36-D69F3F772429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6234B2A-A89F-4E25-B6FF-FF4DBE93ED41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6234B2A-A89F-4E25-B6FF-FF4DBE93ED41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6234B2A-A89F-4E25-B6FF-FF4DBE93ED41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6234B2A-A89F-4E25-B6FF-FF4DBE93ED41}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
