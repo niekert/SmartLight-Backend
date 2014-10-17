@@ -58,5 +58,13 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tables" />
+    <Folder Include="Defaults" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\Lamp.sql" />
+    <Build Include="Tables\Timelock.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Defaults\DF_Defaults.sql" />
   </ItemGroup>
 </Project>

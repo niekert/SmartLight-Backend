@@ -8,6 +8,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartLight.Entities", "SmartLight.Entities\SmartLight.Entities.csproj", "{FF94430D-3837-4FED-AC36-D69F3F772429}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartLight.Services", "SmartLight.Services\SmartLight.Services.csproj", "{E6234B2A-A89F-4E25-B6FF-FF4DBE93ED41}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FF94430D-3837-4FED-AC36-D69F3F772429} = {FF94430D-3837-4FED-AC36-D69F3F772429}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
