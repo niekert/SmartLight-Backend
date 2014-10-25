@@ -73,7 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\LampDTO.cs" />
-    <Compile Include="DTO\TimelockDTO.cs" />
+    <Compile Include="DTO\LampIDState.cs" />
     <Compile Include="LampService.svc.cs">
       <DependentUpon>LampService.svc</DependentUpon>
     </Compile>

@@ -28,3 +28,34 @@ NEWID(),
 1,
 @timeLockId
 );
+
+INSERT INTO Lamp(LampId, LampName, CurrentState, TurnOnWhenInRange, TimelockId)
+VALUES
+(
+NEWID(),
+'Slaapkamer bedlicht',
+0,
+1,
+null
+);
+
+INSERT INTO Lamp(LampId, LampName, CurrentState, TurnOnWhenInRange, TimelockId)
+VALUES
+(
+NEWID(),
+'Slaapkamer plafond',
+0,
+1,
+null
+);
+
+INSERT INTO Lamp(LampId, LampName, CurrentState, TurnOnWhenInRange, TimelockId)
+VALUES
+(
+NEWID(),
+'Badkamer',
+0,
+1,
+null
+);
+

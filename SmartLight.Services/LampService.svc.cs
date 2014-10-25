@@ -13,9 +13,9 @@ namespace SmartLight.Services
         public List<DTO.LampDTO> GetLamps()
         {
             var returnList = new List<DTO.LampDTO>();
-            using(Entities.SmartLightEntities entities = new Entities.SmartLightEntities())
+            using (Entities.SmartLightEntities entities = new Entities.SmartLightEntities())
             {
-                var lamps = entities.Lamps;
+                var lamps = entities.Lamps.OrderBy(l => l.LampName);
                 foreach (var lamp in lamps)
                 {
                     returnList.Add(new DTO.LampDTO(lamp));
@@ -25,9 +25,19 @@ namespace SmartLight.Services
             return returnList;
         }
 
-        public bool TurnOnLampsInRange()
+        public List<DTO.LampIDState> ToggleLampStates(List<DTO.LampIDState> lampsToUpdate)
         {
-            throw new NotImplementedException();
+            List<DTO.LampIDState> returnedLamps = new List<DTO.LampIDState>();
+
+            foreach (var lamp in lampsToUpdate)
+            {
+                //TODO: For each in lampsToUpdate, update the state of the lamp and add to returnlist.
+
+                lamp.LampState = Entities.Enumerations.LampState.Off;
+                returnedLamps.Add(lamp);
+            }
+
+            return returnedLamps;
         }
     }
 }

@@ -16,7 +16,11 @@ namespace SmartLight.Services.DTO
         [DataMember]
         public Guid Id { get; set; }
         [DataMember]
-        public TimelockDTO TimeLock { get; set; }
+        public int TurnOnSeconds {get; set;} //Seconds to turn on after midnight
+        [DataMember]
+        public int TurnOffSeconds { get; set; } //Seconds to go back off after midnight.
+        [DataMember]
+        public bool HasTimeLock { get; set; }
 
 
         public LampDTO(SmartLight.Entities.Lamp lampEntity)
@@ -24,7 +28,13 @@ namespace SmartLight.Services.DTO
             this.LampState = lampEntity.CurrentState;
             this.Name = lampEntity.LampName;
             this.Id = lampEntity.LampId;
-            this.TimeLock = new TimelockDTO(lampEntity.Timelock);
+            this.HasTimeLock = (lampEntity.Timelock != null);
+            
+            if(this.HasTimeLock)
+            {
+                this.TurnOnSeconds = (lampEntity.Timelock.StartTime.Hours * 3600) + (lampEntity.Timelock.StartTime.Minutes * 60);
+                this.TurnOffSeconds = (lampEntity.Timelock.EndTime.Hours * 3600) + (lampEntity.Timelock.EndTime.Minutes * 60);
+            }
         }
     }
 }
