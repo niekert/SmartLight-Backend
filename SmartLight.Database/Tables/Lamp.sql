@@ -3,6 +3,8 @@
 	[LampId] UNIQUEIDENTIFIER NOT NULL,
 	[LampName] varchar(max) NOT NULL,
 	[CurrentState] TINYINT NOT NULL,
+	[TurnOnCode] varchar(10) NOT NULL,
+	[TurnOffCode] varchar(10) NOT NULL,
 	[TurnOnWhenInRange] bit not null
 		CONSTRAINT [DF_Lamp_TurnOnAtHome] DEFAULT(0),
 	[TimelockId] UNIQUEIDENTIFIER NULL,

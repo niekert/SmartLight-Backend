@@ -21,7 +21,8 @@ namespace SmartLight.Services.DTO
         public int TurnOffSeconds { get; set; } //Seconds to go back off after midnight.
         [DataMember]
         public bool HasTimeLock { get; set; }
-
+        [DataMember]
+        public bool TurnOnInRange { get; set; }
 
         public LampDTO(SmartLight.Entities.Lamp lampEntity)
         {
@@ -29,6 +30,7 @@ namespace SmartLight.Services.DTO
             this.Name = lampEntity.LampName;
             this.Id = lampEntity.LampId;
             this.HasTimeLock = (lampEntity.Timelock != null);
+            this.TurnOnInRange = lampEntity.TurnOnWhenInRange;
             
             if(this.HasTimeLock)
             {

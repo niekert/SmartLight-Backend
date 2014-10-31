@@ -12,6 +12,8 @@
           <Property Name="LampId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="LampName" Type="varchar(max)" Nullable="false" />
           <Property Name="CurrentState" Type="tinyint" Nullable="false" />
+          <Property Name="TurnOnCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TurnOffCode" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="TurnOnWhenInRange" Type="bit" Nullable="false" />
           <Property Name="TimelockId" Type="uniqueidentifier" />
         </EntityType>
@@ -67,6 +69,8 @@
           <Property Name="TimelockId" Type="Guid" />
           <NavigationProperty Name="Timelock" Relationship="SmartLightModel.FK_Lamp_Timelock" FromRole="Lamp" ToRole="Timelock" />
           <Property Name="TurnOnWhenInRange" Type="Boolean" Nullable="false" />
+          <Property Name="TurnOnCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TurnOffCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Timelock">
           <Key>
@@ -99,6 +103,8 @@
           <EntitySetMapping Name="Lamps">
             <EntityTypeMapping TypeName="SmartLightModel.Lamp">
               <MappingFragment StoreEntitySet="Lamp">
+                <ScalarProperty Name="TurnOffCode" ColumnName="TurnOffCode" />
+                <ScalarProperty Name="TurnOnCode" ColumnName="TurnOnCode" />
                 <ScalarProperty Name="TurnOnWhenInRange" ColumnName="TurnOnWhenInRange" />
                 <ScalarProperty Name="TimelockId" ColumnName="TimelockId" />
                 <ScalarProperty Name="CurrentState" ColumnName="CurrentState" />

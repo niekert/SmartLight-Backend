@@ -19,6 +19,8 @@ namespace SmartLight.Entities
         public Enumerations.LampState CurrentState { get; set; }
         public Nullable<System.Guid> TimelockId { get; set; }
         public bool TurnOnWhenInRange { get; set; }
+        public string TurnOnCode { get; set; }
+        public string TurnOffCode { get; set; }
     
         public virtual Timelock Timelock { get; set; }
     }
