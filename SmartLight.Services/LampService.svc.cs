@@ -33,7 +33,6 @@ namespace SmartLight.Services
             {
                 foreach (var lampIdState in lampsToUpdate)
                 {
-                    //TODO: For each in lampsToUpdate, update the state of the lamp and add to returnlist.
                     var lamp = entities.Lamps.Find(lampIdState.LampID);
 
                     if (lamp != null)
@@ -62,6 +61,52 @@ namespace SmartLight.Services
             }
 
             return returnedLamps;
+        }
+
+        public DTO.LampDTO UpdateLamp(DTO.LampDTO lampToUpdate)
+        {
+            if(lampToUpdate == null)
+            {
+                throw new ArgumentNullException("LampToUpdate can't be null.");
+            }
+
+            using(Entities.SmartLightEntities entities = new Entities.SmartLightEntities())
+            {
+                Entities.Lamp dbLamp = entities.Lamps.Find(lampToUpdate.Id);
+
+                if(dbLamp == null)
+                {
+                    throw new ArgumentException("Lamp you are trying to update does not exist in the database.");
+                }
+
+                dbLamp.LampName = lampToUpdate.Name;
+                dbLamp.TurnOnWhenInRange = lampToUpdate.TurnOnInRange;
+                
+                if(lampToUpdate.HasTimeLock)
+                {
+                    Entities.Timelock timeLock = dbLamp.Timelock;
+                    if(timeLock == null)
+                    {
+                        timeLock = new Entities.Timelock() { TimelockId = Guid.NewGuid() };
+                        entities.Timelocks.Add(timeLock);
+                        dbLamp.Timelock = timeLock;
+                    }
+
+                    timeLock.StartTime = TimeSpan.FromSeconds(lampToUpdate.TurnOnSeconds);
+                    timeLock.EndTime = TimeSpan.FromSeconds(lampToUpdate.TurnOffSeconds);
+                }
+                else
+                {
+                   if(dbLamp.Timelock != null)
+                   {
+                       dbLamp.Timelock = null;
+                   }
+                }
+
+                entities.SaveChanges();
+
+                return lampToUpdate;
+            }
         }
     }
 }

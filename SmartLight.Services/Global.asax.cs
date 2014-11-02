@@ -34,7 +34,7 @@ namespace SmartLight.Services
             {
 
                 var lampsToTurnOn = entities.Lamps.Where(l => l.Timelock != null && l.CurrentState == Entities.Enumerations.LampState.Off
-                    && l.Timelock.StartTime <= currentTime && currentTime <= l.Timelock.EndTime);
+                    && l.Timelock.StartTime.Hours == currentTime.Hours && l.Timelock.StartTime.Minutes == currentTime.Minutes);
 
                 foreach(var lamp in lampsToTurnOn)
                 {
@@ -43,7 +43,7 @@ namespace SmartLight.Services
                 }
 
                 var lampsToTurnOff = entities.Lamps.Where(l => l.Timelock != null && l.CurrentState == Entities.Enumerations.LampState.On
-                    && l.Timelock.EndTime <= currentTime && currentTime >= l.Timelock.StartTime);
+                    && l.Timelock.EndTime.Hours == currentTime.Hours && l.Timelock.EndTime.Minutes == currentTime.Minutes);
 
                 foreach(var lamp in lampsToTurnOff)
                 {

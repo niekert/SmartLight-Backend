@@ -22,5 +22,8 @@ namespace SmartLight.Services
 
         [OperationContract]
         List<DTO.LampIDState> ToggleLampStates(List<DTO.LampIDState> lampsToUpdate);
+
+        [OperationContract]
+        DTO.LampDTO UpdateLamp(DTO.LampDTO updatedLamp);
     }
 }
